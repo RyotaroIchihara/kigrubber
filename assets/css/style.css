@@ -118,14 +118,14 @@ a {
   align-items: end;
   padding: 96px 0 68px;
   background:
-    linear-gradient(180deg, rgba(5, 7, 10, 0.24), rgba(6, 8, 12, 0.84)),
+    linear-gradient(180deg, rgba(5, 7, 10, 0.04), rgba(6, 8, 12, 0.36)),
     url("../images/kv.JPG") center/cover no-repeat;
 }
 
 .hero-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(120deg, rgba(5, 5, 7, 0.82) 25%, rgba(5, 5, 7, 0.42) 70%);
+  background: linear-gradient(120deg, rgba(5, 5, 7, 0.30) 25%, rgba(5, 5, 7, 0.06) 70%);
 }
 
 .hero-content {
