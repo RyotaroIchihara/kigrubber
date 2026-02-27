@@ -1,5 +1,4 @@
 /* ─── Supabase config ─── */
-// TODO: Replace with your actual Supabase project URL and anon key
 const SUPABASE_URL = "https://qailhhojedrbvxutugrl.supabase.co";
 const SUPABASE_ANON_KEY = "sb_publishable_gslgz9vZ-X8cCEB4dr9s6g_D7JG8Ht8";
 
