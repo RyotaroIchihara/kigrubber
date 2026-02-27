@@ -174,18 +174,28 @@ document.addEventListener("DOMContentLoaded", () => {
         p_award_handle: fd.get("award_handle") || null,
       };
 
-      const { data, error } = await supabase.rpc("submit_entry", params);
-
-      if (error) {
-        console.error("RPC error:", error);
+      const FUNCTION_URL = `${SUPABASE_URL}/functions/v1/send-confirmation`;
+      let result;
+      try {
+        const res = await fetch(FUNCTION_URL, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            "Authorization": `Bearer ${SUPABASE_ANON_KEY}`,
+          },
+          body: JSON.stringify(params),
+        });
+        result = await res.json();
+      } catch (err) {
+        console.error("Fetch error:", err);
         alert("送信に失敗しました。時間をおいて再度お試しください。");
         submitBtn.disabled = false;
         submitBtn.textContent = originalText;
         return;
       }
 
-      if (data && data.error) {
-        alert(data.error);
+      if (result && result.error) {
+        alert(result.error);
         submitBtn.disabled = false;
         submitBtn.textContent = originalText;
         return;
