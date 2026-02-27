@@ -191,14 +191,10 @@ document.addEventListener("DOMContentLoaded", () => {
         return;
       }
 
-      form.reset();
-      // Re-sync conditional fields after reset
-      if (awardCheckbox) awardCheckbox.dispatchEvent(new Event("change"));
-      if (rentalCheckbox) rentalCheckbox.dispatchEvent(new Event("change"));
-
-      submitBtn.disabled = false;
-      submitBtn.textContent = originalText;
-      alert("お申し込みありがとうございます！確認メールをお送りします。");
+      // Show success UI, hide form
+      form.hidden = true;
+      const successEl = document.querySelector("#form-success");
+      if (successEl) successEl.hidden = false;
     });
   }
 });

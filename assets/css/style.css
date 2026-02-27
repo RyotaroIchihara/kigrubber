@@ -425,6 +425,42 @@ h2 {
   color: var(--muted);
 }
 
+.form-success {
+  padding: 40px 24px;
+  border-radius: var(--radius);
+  border: 1px solid color-mix(in srgb, var(--gold) 40%, transparent);
+  background: var(--card);
+  box-shadow: var(--shadow);
+  text-align: center;
+}
+
+.form-success-icon {
+  margin: 0 0 12px;
+  font-size: 2.8rem;
+  color: var(--gold);
+}
+
+.form-success h3 {
+  font-size: 1.4rem;
+  margin: 0 0 12px;
+}
+
+.form-success p {
+  margin: 0 0 10px;
+}
+
+.form-success a {
+  color: color-mix(in srgb, var(--gold) 80%, var(--text));
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.form-success-note {
+  margin-top: 16px;
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
 .entry-form {
   display: grid;
   gap: 12px;
