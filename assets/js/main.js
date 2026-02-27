@@ -1,6 +1,6 @@
 /* ─── Supabase config ─── */
 const SUPABASE_URL = "https://qailhhojedrbvxutugrl.supabase.co";
-const SUPABASE_ANON_KEY = "sb_publishable_gslgz9vZ-X8cCEB4dr9s6g_D7JG8Ht8";
+const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InFhaWxoaG9qZWRyYnZ4dXR1Z3JsIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzIxODA2MjEsImV4cCI6MjA4Nzc1NjYyMX0.9iCX4E-UxjWIBpOyEecLIBq5V2V3QLfFq7MUj7MkJbk";
 
 document.addEventListener("DOMContentLoaded", () => {
   /* ─── Existing: Award checkbox toggle ─── */
