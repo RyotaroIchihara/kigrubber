@@ -202,7 +202,8 @@ document.addEventListener("DOMContentLoaded", () => {
       }
 
       // Show success UI, hide form
-      form.hidden = true;
+      // Note: form.hidden = true is overridden by CSS display:grid, so use style directly
+      form.style.display = "none";
       const successEl = document.querySelector("#form-success");
       if (successEl) successEl.hidden = false;
     });
