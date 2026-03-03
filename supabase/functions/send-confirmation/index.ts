@@ -68,36 +68,19 @@ Deno.serve(async (req) => {
       from: "INCARNATION PARTY <noreply@alt-fetish.com>",
       to: [p_email],
       subject: "【INCARNATION PARTY】参加申込を受け付けました",
-      html: `
-<div style="font-family: sans-serif; max-width: 560px; margin: 0 auto; color: #1a1a2e;">
-  <h2 style="color: #8e1427;">INCARNATION PARTY 参加申込確認</h2>
-  <p>${p_name} さん、お申し込みありがとうございます。</p>
-  <table style="border-collapse: collapse; width: 100%; margin: 16px 0;">
-    <tr>
-      <td style="padding: 8px 12px; background: #f5f5f5; font-weight: bold; width: 120px;">参加希望回</td>
-      <td style="padding: 8px 12px; border-bottom: 1px solid #e0e0e0;">${sessionLabel}</td>
-    </tr>
-    <tr>
-      <td style="padding: 8px 12px; background: #f5f5f5; font-weight: bold;">日程</td>
-      <td style="padding: 8px 12px; border-bottom: 1px solid #e0e0e0;">2026年3月7日（土）</td>
-    </tr>
-    <tr>
-      <td style="padding: 8px 12px; background: #f5f5f5; font-weight: bold;">参加費</td>
-      <td style="padding: 8px 12px; border-bottom: 1px solid #e0e0e0;">¥5,000（当日現金払い）</td>
-    </tr>
-    <tr>
-      <td style="padding: 8px 12px; background: #f5f5f5; font-weight: bold;">会場</td>
-      <td style="padding: 8px 12px;">東小金井特設イベントスペース（詳細は後日ご連絡）</td>
-    </tr>
-  </table>
-  <p style="font-size: 0.9em; color: #666;">
-    このメールに心当たりがない場合や、ご不明な点は
-    <a href="mailto:contact@alt-fetish.com">contact@alt-fetish.com</a> までご連絡ください。
-  </p>
-  <hr style="border: none; border-top: 1px solid #ddd; margin: 24px 0;" />
-  <p style="font-size: 0.8em; color: #999;">ALT-FETISH / INCARNATION PARTY 運営事務局</p>
-</div>
-      `.trim(),
+      text: `${p_name} さん、お申し込みありがとうございます。
+
+━━━━━━━━━━━━━━━━━━━━━━
+参加希望回：${sessionLabel}
+日程　　　：2026年3月7日（土）
+参加費　　：¥5,000（当日現金払い）
+会場　　　：東小金井特設イベントスペース（詳細は後日ご連絡）${p_rental ? "\nレンタル料：¥5,000（当日現金払い）" : ""}
+━━━━━━━━━━━━━━━━━━━━━━
+
+参加確定の連絡を改めてお送りします。
+ご不明な点は contact@alt-fetish.com までご連絡ください。
+
+ALT-FETISH / INCARNATION PARTY 運営事務局　電話070-5087-9619`,
     }),
   });
 

@@ -77,6 +77,19 @@ document.addEventListener("DOMContentLoaded", () => {
   /* ─── Supabase: Init ─── */
   const supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 
+  /* ─── Track remaining counts per slot ─── */
+  const slotStatus = {};
+
+  function checkAllSoldOut() {
+    const submitBtn = document.querySelector('button[type="submit"]');
+    if (!submitBtn) return;
+    const allSoldOut =
+      Object.keys(slotStatus).length > 0 &&
+      Object.values(slotStatus).every((r) => r <= 0);
+    submitBtn.disabled = allSoldOut;
+    submitBtn.textContent = allSoldOut ? "現在全回満枠です" : "送信する";
+  }
+
   /* ─── Slot UI helpers ─── */
   function updateSlotUI(slotId, remaining) {
     const remainingEl = document.querySelector(`.slot-remaining[data-slot="${slotId}"]`);
@@ -102,6 +115,9 @@ document.addEventListener("DOMContentLoaded", () => {
     if (radio) {
       radio.disabled = remaining <= 0;
     }
+
+    slotStatus[slotId] = remaining;
+    checkAllSoldOut();
   }
 
   /* ─── Fetch initial slot data ─── */
