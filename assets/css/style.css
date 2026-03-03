@@ -358,6 +358,12 @@ h2 {
   color: var(--muted);
 }
 
+.sold-out-note {
+  margin-top: 0.75rem;
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
 .slot-cta {
   margin-top: auto;
   padding: 10px 20px;

@@ -82,12 +82,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function checkAllSoldOut() {
     const submitBtn = document.querySelector('button[type="submit"]');
+    const note = document.querySelector("#all-sold-out-note");
     if (!submitBtn) return;
     const allSoldOut =
       Object.keys(slotStatus).length > 0 &&
       Object.values(slotStatus).every((r) => r <= 0);
     submitBtn.disabled = allSoldOut;
     submitBtn.textContent = allSoldOut ? "現在全回満枠です" : "送信する";
+    if (note) note.hidden = !allSoldOut;
   }
 
   /* ─── Slot UI helpers ─── */
